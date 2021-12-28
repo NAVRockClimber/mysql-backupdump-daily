@@ -4,7 +4,9 @@ FROM alpine:latest
 ENV MYSQL_ROOT_PASSWORD \   
     DB_HOST  \
     
-COPY scripts/backup-database.sh ~/backup.sh
+COPY scripts/backup-database.sh /root/backup.sh
+RUN ls -alF /root
+RUN ls -alf scripts/
 
 RUN apk update && \
     apk upgrade && \
