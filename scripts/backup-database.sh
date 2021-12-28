@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "creating backup"
+
 BACKUP_FOLDER=/opt/mysql/backup
 NOW=$(date '+%d')
 
