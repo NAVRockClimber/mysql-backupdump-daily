@@ -6,7 +6,7 @@ ENV MYSQL_ROOT_PASSWORD \
     
 COPY scripts/backup-database.sh /root/backup.sh
 RUN ls -alF /root
-RUN ls -alf scripts/
+RUN ls -alF scripts/
 
 RUN apk update && \
     apk upgrade && \
