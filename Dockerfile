@@ -5,14 +5,12 @@ ENV MYSQL_ROOT_PASSWORD \
     DB_HOST  \
 
 WORKDIR /workspace
-RUN ls -alF 
     
 COPY backup-database.sh /root/backup.sh
-RUN ls -alF /root
 
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache mariadb-client && \
-    chmod a+x ~/backup.sh
+    chmod a+x /root/backup.sh
 
 CMD  [ "/root/backup.sh" ]
