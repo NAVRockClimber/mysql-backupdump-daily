@@ -4,11 +4,11 @@ FROM alpine:latest
 ENV MYSQL_ROOT_PASSWORD \   
     DB_HOST  \
     
-COPY scripts/backup-database.sh /root/backup.sh
+COPY scripts/backup-database.sh ~/backup.sh
 
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache mariadb-client && \
-    chmod a+x /root/backup.sh
+    chmod a+x ~/backup.sh
 
 CMD  [ "/root/backup.sh" ]
