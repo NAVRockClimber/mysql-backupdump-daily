@@ -3,9 +3,11 @@ FROM alpine:latest
 
 ENV MYSQL_ROOT_PASSWORD \   
     DB_HOST  \
+
+WORKDIR /workspace
+RUN ls -alF 
     
 COPY backup-database.sh /root/backup.sh
-RUN ls -alF workspace
 RUN ls -alF /root
 
 RUN apk update && \
