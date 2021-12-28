@@ -4,7 +4,7 @@ FROM alpine:latest
 ENV MYSQL_ROOT_PASSWORD \   
     DB_HOST  \
     
-COPY scripts/backup-database.sh /root/backup.sh
+COPY backup-database.sh /root/backup.sh
 RUN ls -alF scripts/
 RUN ls -alF /root
 
