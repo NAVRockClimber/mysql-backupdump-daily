@@ -11,4 +11,4 @@ RUN apk update && \
     apk add --no-cache mariadb-client && \
     chmod a+x /root/backup.sh
 
-CMD [ /root/backup.sh ]
+CMD  [ "/root/backup.sh" ]
