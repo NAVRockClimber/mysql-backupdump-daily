@@ -7,8 +7,7 @@ GZIP=$(which gzip)
 MYSQLDUMP=$(which mysqldump)
 
 ### MySQL Server Login info ###
-MDB=$MYSQL_DATABASE
-MHOST=$MYSQL_CONTAINER_NAME
+MHOST=$DB_HOST
 MPASS=$MYSQL_ROOT_PASSWORD
 MUSER=root
 
