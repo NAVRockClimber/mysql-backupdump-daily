@@ -13,8 +13,7 @@ MHOST=$DB_HOST
 MPASS=$MYSQL_ROOT_PASSWORD
 MUSER=root
 
-ls
-[ -d "$BACKUP_FOLDER" ] && rm -r $BACKUP_FOLDER
+[ -d "$BACKUP_FOLDER" ] && rm -rf $BACKUP_FOLDER
 [ ! -d "$BACKUP_FOLDER" ] && mkdir --parents $BACKUP_FOLDER
 
 FILE=${BACKUP_FOLDER}/backup-${NOW}.sql.gz
