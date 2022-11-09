@@ -35,5 +35,6 @@ jobs:
       run: |
         version=$(git describe --abbrev=0 --tags)
         currImage="rockclimber81/mariadb-backup:$version"
-        docker buildx build --platform linux/amd64,linux/arm64 -t $currImage --push .
+        latestImage="rockclimber81/mariadb-backup"
+        docker buildx build --platform linux/amd64,linux/arm64 -t $currImage -t $latestImage --push .
         docker logout
