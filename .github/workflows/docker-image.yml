@@ -14,11 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rockclimber81/mariadb-backup:$(date +%s)
     - uses: azure/docker-login@v1
       with:
         username: ${{ secrets.DH_USER }}
         password: ${{ secrets.DH_PASSWORD }}
     - name: Build the Docker image
-      run: docker push rockclimber81/mariadb-backup:$(date +%s)
+      run: |
+        docker build . --file Dockerfile --tag rockclimber81/mariadb-backup:$(date +%s)
+        docker push rockclimber81/mariadb-backup:$(date +%s)
+        docker logout
