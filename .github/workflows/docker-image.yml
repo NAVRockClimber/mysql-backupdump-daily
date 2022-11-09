@@ -35,6 +35,5 @@ jobs:
     - name: Build the Docker image
       run: |
         currImage="rockclimber81/mariadb-backup:$(date +%s)"
-        docker buildx build --platform linux/amd64,linux/arm64 -t $currImage .
-        docker push $currImage
+        docker buildx build --platform linux/amd64,linux/arm64 -t $currImage --push .
         docker logout
