@@ -21,6 +21,6 @@ jobs:
     - name: Build the Docker image
       run: |
         currImage="rockclimber81/mariadb-backup:$(date +%s)"
-        docker build . --file Dockerfile --tag $($currImage)
-        docker push $($currImage)
+        docker build . --file Dockerfile --tag $currImage
+        docker push $currImage
         docker logout
