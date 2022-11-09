@@ -13,8 +13,7 @@ MHOST=$DB_HOST
 MPASS=$MYSQL_ROOT_PASSWORD
 MUSER=root
 
-[ -d "$BACKUP_FOLDER" ] && rm -r $BACKUP_FOLDER
 [ ! -d "$BACKUP_FOLDER" ] && mkdir --parents $BACKUP_FOLDER
 
-FILE=${BACKUP_FOLDER}/backup-${NOW}.sql.gz
+FILE=${BACKUP_FOLDER}/backup.sql.gz
 $MYSQLDUMP -h $MHOST -u $MUSER -p${MPASS} --all-databases --single-transaction --quick --lock-tables=false | $GZIP -9 > $FILE
