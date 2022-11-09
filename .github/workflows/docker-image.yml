@@ -20,6 +20,7 @@ jobs:
         password: ${{ secrets.DH_PASSWORD }}
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag rockclimber81/mariadb-backup:$(date +%s)
-        docker push rockclimber81/mariadb-backup:$(date +%s)
+        $currImage = "rockclimber81/mariadb-backup:$(date +%s)"
+        docker build . --file Dockerfile --tag $($currImage)
+        docker push $($currImage)
         docker logout
