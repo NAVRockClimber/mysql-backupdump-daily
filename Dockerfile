@@ -1,5 +1,5 @@
 # https://ricardolsmendes.medium.com/mysql-mariadb-with-scheduled-backup-jobs-running-in-docker-1956e9892e78
-FROM alpine:3.19.1
+FROM alpine:3.20.1
 
 ENV MYSQL_ROOT_PASSWORD \   
     DB_HOST  \
